@@ -23,6 +23,9 @@
 			},
 			...$contactStore
 		]
+
+		inputName = "";
+		inputNumber ="";
 	}
 
 	//delete contact function
@@ -50,7 +53,7 @@
 
 		<button on:click={addContact} type="button" class="btn variant-filled">Add contact</button>
 		<hr />
-		
+
 		<h2 class="h2">Your contacts</h2>
 		{#each $contactStore as contact, index}
 			<div class="card p-2">
