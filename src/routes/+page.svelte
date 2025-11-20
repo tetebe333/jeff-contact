@@ -51,7 +51,7 @@
 		btnState = true
 	}
 
-	function cancle(){ 
+	function cancel(){ 
 
 		 dataIndex = null
 
@@ -90,7 +90,7 @@
 
 		{#if btnState == false}
 			<button on:click={updateContact} type="button" class="btn variant-filled">update contact</button>
-			<button on:click={cancle} type="button" class="btn variant-filled">Cancle</button>
+			<button on:click={cancel} type="button" class="btn variant-filled">Cancel</button>
 		{/if}
 		
 
