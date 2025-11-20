@@ -103,7 +103,7 @@
 				<h1>{contact.name}</h1>
 				<h1>{contact.phoneNumber}</h1>
 				<button on:click={() =>deleteContact(index)} type="button" class="btn btn-sm variant-filled-error">Delete</button>
-				<button on:click={() =>editContact(index)} type="button" class="btn btn-sm variant-filled-error ms-4">Edith</button>
+				<button on:click={() =>editContact(index)} type="button" class="btn btn-sm variant-filled-error ms-4">Edit</button>
 			</div>
 		{/each}
 	</div>
