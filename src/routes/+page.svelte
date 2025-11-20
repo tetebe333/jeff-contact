@@ -38,7 +38,7 @@
 
 <main class="container h-full mx-auto flex justify-center items-center py-7">
 	<div class="space-y-5">
-		<h1 class="h1">contactList</h1>
+		<h1 class="h1">Contact List</h1>
 		<p>All your contacts in one persistent state!</p>
 
 		<label class="label">
