@@ -36,7 +36,7 @@
 	}
 </script>
 
-<main class="container h-full mx-auto flex justify-center items-center">
+<main class="container h-full mx-auto flex justify-center items-center mt-7">
 	<div class="space-y-5">
 		<h1 class="h1">contactList</h1>
 		<p>All your contacts in one persistent state!</p>
