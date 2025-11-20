@@ -4,6 +4,8 @@
 	
 	let inputName = "";
 	let inputNumber ="";
+	let dataIndex:any = null;
+	let btnState = true;
 
 	//writable type
 	interface contact{
@@ -26,6 +28,37 @@
 
 		inputName = "";
 		inputNumber ="";
+	}
+
+	function editContact(index = -1){
+		 dataIndex = index
+
+		inputName = $contactStore[index].name 
+		inputNumber = $contactStore[index].phoneNumber
+
+		btnState = false
+	}
+
+	function updateContact(){
+		$contactStore[dataIndex].name = inputName
+		$contactStore[dataIndex].phoneNumber = inputNumber 
+
+		 dataIndex = null
+
+		inputName = "";
+		inputNumber ="";
+
+		btnState = true
+	}
+
+	function cancle(){ 
+
+		 dataIndex = null
+
+		inputName = "";
+		inputNumber ="";
+
+		btnState = true
 	}
 
 	//delete contact function
@@ -51,7 +84,17 @@
 			<input bind:value={inputNumber} type="text" class="input" placeholder="Phone Number">
 		</label>
 
-		<button on:click={addContact} type="button" class="btn variant-filled">Add contact</button>
+		{#if btnState == true}
+			<button on:click={addContact} type="button" class="btn variant-filled">Add contact</button>
+		{/if}
+
+		{#if btnState == false}
+			<button on:click={updateContact} type="button" class="btn variant-filled">update contact</button>
+			<button on:click={cancle} type="button" class="btn variant-filled">Cancle</button>
+		{/if}
+		
+
+
 		<hr />
 
 		<h2 class="h2">Your contacts</h2>
@@ -60,6 +103,7 @@
 				<h1>{contact.name}</h1>
 				<h1>{contact.phoneNumber}</h1>
 				<button on:click={() =>deleteContact(index)} type="button" class="btn btn-sm variant-filled-error">Delete</button>
+				<button on:click={() =>editContact(index)} type="button" class="btn btn-sm variant-filled-error ms-4">Edith</button>
 			</div>
 		{/each}
 	</div>
